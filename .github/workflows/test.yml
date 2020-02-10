@@ -1,0 +1,20 @@
+name: check
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  build-client:
+    runs-on: [ubuntu-latest]
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v1
+      -
+        name: Available platforms
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+      -
+        name: abcscs
+        run: git status
