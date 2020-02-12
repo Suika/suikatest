@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: Suika/fork-sync@v1.1
-      id: for_sync
+      id: fork_sync
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         owner: mserajnik
@@ -16,7 +16,9 @@ jobs:
         head: master
     - name: check setOutput
       run: |
-        echo ${{ steps.for_sync.outputs.COMPLETEDWITHSYNC }}
+        echo $ABC
+      env:
+        ABC: ${{ steps.fork_sync.outputs.COMPLETEDWITHSYNC }}
   build:
     runs-on: [ubuntu-latest]
     needs: [sync]
