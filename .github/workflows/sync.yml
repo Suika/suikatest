@@ -14,9 +14,8 @@ jobs:
         owner: mserajnik
         base: master
         head: master
-    - name: check setOutput
-      run: echo $ENV_VARIABLE
-      shell: bash
+    - name: check exportVariable
+      run: echo $forkSynced
   build:
     runs-on: [ubuntu-latest]
     needs: [sync]
