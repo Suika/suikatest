@@ -7,7 +7,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-    - uses: Suika/fork-sync@v1.1
+    - uses: Suika/fork-sync@master
       id: fork_sync
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
