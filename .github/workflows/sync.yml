@@ -13,7 +13,7 @@ jobs:
         owner: mserajnik
         base: master
         head: master
-    - run: echo ${{forkSynced}}
+    - run: echo ${forkSynced} 
   build:
     runs-on: [ubuntu-latest]
     needs: [sync]
