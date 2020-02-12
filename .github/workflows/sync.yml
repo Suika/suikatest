@@ -15,10 +15,8 @@ jobs:
         base: master
         head: master
     - name: check setOutput
-      run: |
-        echo $ABC
-      env:
-        ABC: ${{ steps.fork_sync.outputs.COMPLETEDWITHSYNC }}
+      run: echo $ENV_VARIABLE
+      shell: bash
   build:
     runs-on: [ubuntu-latest]
     needs: [sync]
