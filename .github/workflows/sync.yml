@@ -7,14 +7,14 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-    - uses: Suika/fork-sync@master
+    - uses: Suika/fork-sync@v1.1
       id: fork_sync
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         owner: mserajnik
         base: master
         head: master
-    - name: check exportVariable
+    - name: check forkSynced
       run: echo $forkSynced
   build:
     runs-on: [ubuntu-latest]
